@@ -1,7 +1,7 @@
 
 
-$(document).ready(function(){
+$(function(){
 	
 	//导航显示
-	$(".maker")
+	$("img.lazy").lazyload({effect: "fadeIn"});
 });
