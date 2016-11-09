@@ -726,10 +726,11 @@ img{border: 0;}
 	margin-bottom: 8px;
 }
 
-.info-name a,.pro-price{
+.info-name a,.info-pro-price{
 	float: left;
 }
-.pro-price{
+.info-pro-price{
+	color: #ff6700;
 	border-left: 1px solid #e0e0e0;
 	padding-left: 1em;
 	margin-left: 1em;
