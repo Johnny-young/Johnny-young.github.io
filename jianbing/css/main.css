@@ -3,10 +3,10 @@
 
 body,h1,h2,h3,h4,h5,h6,div,span,a,i,p,ul,li,input,img,dl,dt,dd{margin: 0;padding: 0;box-sizing: border-box;}
 body{
-	font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+	font: 14px/1.5  "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
 	color: #ccc;
 	background: #fff;
-	min-width: 1226px;
+	overflow-x: hidden;
 }
 .clearfix{
 	*zoom: 1;
@@ -118,7 +118,7 @@ a{text-decoration: none;color: #000;}
 	font-size: 40px;
 }
 
-.header-nav{margin-left: 20px;}
+.header-nav{}
 .header-nav li{
 	float: left;
 }
@@ -159,7 +159,7 @@ a{text-decoration: none;color: #000;}
 	opacity: 1;
 }
 
-.header-search{margin-left: 40px;margin-top: 20px;font-size: 0;padding-bottom: 7px;}
+.header-search{margin-top: 20px;font-size: 0;padding-bottom: 7px;}
 .header-search input{
 	float: left;
 	height: 50px;
@@ -189,7 +189,6 @@ a{text-decoration: none;color: #000;}
 
 
 /*content*/
-
 .ct-head{
 	position: relative;
 	height: 50px;
@@ -234,10 +233,33 @@ a{text-decoration: none;color: #000;}
 	background: #f25807;
 }
 
+.img-group{
+	width: 100%;
+	text-align: center;
+}
+
 .img-item{
+	position: relative;
+	width: 1350px;
+	margin: 0 auto;
 	font-size: 0;
 	padding-bottom:10px;
 	background: #ccc;
+}
+.img-item .container{
+	position: absolute;
+	left: 0; 
+	top: 0;
+	font-size: 16px;
+}
+.img-item .container>p,
+.img-item .container>span,
+.img-item .container > ul,
+.img-item .container > div,
+.img-item .container > input{
+	position: absolute;
+	opacity: 0;
+	
 }
 .last{
 	padding-bottom: 0px;
@@ -247,8 +269,323 @@ a{text-decoration: none;color: #000;}
 	max-width: 1350px;
 }
 
+.img1-title{
+	left: 5%;
+	top: 250px;
+	font-size: 50px;
+	color: #424242;
+}
+.img1-line{
+	font-size: 70px;
+	color: #424242;
+	top: 100px;
+	left: 55%;
+}
 
 
+.en-name,.cn-name{
+	left: 60%;
+	font-size: 30px;
+	color: #424242;
+}
+.en-name{top: 200px;}
+.cn-name{top: 350px;}
+
+.img1-price{
+	font-size: 25px;
+	color: #424242;
+	top: 700px;
+	left: 45%;
+}
+
+.img2-title{
+	left: 8%;
+	top: 350px;
+	font-size: 80px;
+	color: #424242;
+}
+
+.img2-txt1,.img2-txt2{
+	left: 10%;
+	font-size: 30px;
+	color: #424242;
+}
+
+.img2-txt1{
+	top: 400px;
+}
+.img2-txt2{
+	left: 12%;
+	top: 450px;
+}
+.img3-title .color{
+	position: static;
+	color: #2196f3;
+}
+.img3-title{
+	left: 22%;
+	top: 100px;
+	font-size: 80px;
+	color: #424242;
+}
+.img3-para{
+	left: 14%;
+	top: 380px;
+	width: 90%;
+}
+.img-item .img3-para *{position : static;}
+.img3-para li{
+	float: left;
+	margin-right: 8%;
+	margin-bottom: 70px;
+	width: 25%;
+	height: 200px;
+	padding-top: 60px;
+	border: 3px solid #444;
+	background: #eef;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+	-webkit-box-shadow: 0 0 10px #666;
+	-moz-box-shadow: 0 0 10px #666;
+	box-shadow: 0 0 10px #666;
+}
+.img3-para li:hover{
+	-webkit-box-shadow: 0 5px 10px #333;
+	-moz-box-shadow: 0 5px 10px #333;
+	box-shadow: 0 5px 10px #333;
+}
+.img-item  .right-border{margin-right: 0;}
+.para-txt1{
+	font-size: 26px;
+	color: #333;
+}
+.para-txt2{
+	margin-top: 10px;
+	font-size: 20px;
+	color: #333;
+}
+
+.img4-title{
+	left: 54%;
+	top: 180px;
+	font-size: 50px;
+	color: #424242;
+}
+
+.lt{
+	width: 200px;
+	font-size: 20px;
+	color: #424242;
+	text-align: right;
+}
+.list1{
+	left: 90%;
+	top: 350px;
+}
+
+.hor-line{
+	position: absolute;
+	left: -100px;
+	top: 15px;
+	width: 200px;
+	border-top: 2px solid #999;
+}
+.per{
+	position: absolute;
+	top: 30px;
+	right: -30px;
+}
+.list2{
+	left: 80%;
+	top: 500px;
+}
+
+.list3{
+	left: 100%;
+	top: 650px;
+}
+.list4{
+	left: 90%;
+	top: 750px;
+}
+
+.img5-title{
+	left: 10%;
+	top: 500px;
+	font-size: 60px;
+	color: #424242;
+}
+.img5-txt{
+	left: 15%;
+	top: 620px;
+	font-size: 30px;
+	color: #424242;
+}
+
+.quote{
+	left: 45%;
+	top: 200px;
+	font-size: 24px;
+	color: #424242;
+}
+.img6-title1,.img6-title2{
+	top: 450px;
+	font-size: 60px;
+	color: #424242;
+}
+.img6-title1{
+	left: 20%;
+}
+.img6-title2{
+	width: 300px;
+	left: 90%;
+}
+.long-line{
+	top: 650px;
+	left: 0;
+	width: 100%;
+	border-top: 3px solid #ccc;
+}
+.brand{
+	left: 50%;
+	top: 700px;
+	font-size: 30px;
+	color: #716c6c;
+}
+
+.frame{
+	left: 15%;
+	top: 50px;
+	width: 1000px;
+	height: 600px;
+	border: 1px solid #999;
+}
+
+.img7-title{
+	left: 45%;
+	top: 600px;
+	font-size: 36px;
+	color: #424242;
+}
+.search{
+	width: 300px;
+	left: 44%;
+	top: 720px;
+	text-align: center;
+	font-size: 22px;
+	
+}
+.search a{
+	color: #1b91bf;
+}
+.search a:hover{text-decoration: underline;}
+
+.vr{
+	top: 900px;
+	width: 280px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 20px;
+	color: #424242;
+	border: 2px solid #333;
+	cursor: pointer;
+	
+}
+.vr:hover{
+	-webkit-box-shadow: 0 0 10px #333;
+	-moz-box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px #333;
+}
+.version1{
+	left: 14%;
+}
+.version2{left: 45%;}
+.version3{left: 75%;}
+
+.img8-title{
+	left: 50%;
+	top: 200px;
+	font-size: 50px;
+	color: #424242;
+}
+.history{
+	left: 55%;
+	top: 300px;
+	font-size: 26px;
+	color: #424242;
+	cursor: pointer;
+}
+.jb-intro,.jb-title,.jb-txt{
+	left: 55%;
+	font-size: 20px;
+	color: #424242;
+	text-align: left;
+}
+.jb-intro{
+	top: 450px;
+}
+.jb-title{
+	top: 380px;
+}
+
+.jb-txt{
+	top: 600px;
+	width: 500px;
+}
+
+.img9-title{
+	left: 18%;
+	top: 230px;
+	font-size: 60px;
+	color: #424242;
+}
+
+.jb-concept{
+	left: 15%;
+	top: 380px;
+	font-size: 30px;
+	color: #424242;
+}
+.jb-material{
+	left: 18%;
+	top: 480px;
+	font-size: 20px;
+	color: #424242;
+}
+
+.jb-price{
+	left: 5%;
+	top: 560px;
+	font-size: 26px;
+	color: red;
+}
+
+.wait{
+	left: 20%;
+	top: 600px;
+	font-size: 24px;
+	color: #424242;
+}
+
+.buy-now{
+	left: 20%;
+	top: 650px;
+	width: 200px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	font-size: 30px;
+	color: #fff;
+	background: red;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
 /*footer*/
 
 .ft-service {
