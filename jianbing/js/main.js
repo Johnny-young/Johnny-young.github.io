@@ -1,11 +1,6 @@
 
 
 $(document).ready(function(){
-	$("img.lazy").lazyload({
-		effect: "fadeIn",
-		threshold: "100px",
-		failurelimit: 5
-	});
 	
 	/**
 		1: 300px
