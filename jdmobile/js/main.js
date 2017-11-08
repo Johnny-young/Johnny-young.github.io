@@ -53,10 +53,99 @@ window.onload = function() {
 	var time = document.getElementsByClassName("time")[0],
 			hour = time.getElementsByClassName("hour")[0],
 			min = time.getElementsByClassName("min")[0],
-			sec = time.getElementsByClassName("sec")[0];
+			sec = time.getElementsByClassName("sec")[0],
+			oldTime = {},//缓存上一次时间
+			initFlag = true,//初始化标志
+			endFlag = false,//定时器结束标志
+			runningFlag = false;//倒计时正在运行标志
 
-	function countTime(num) {
-		
+	//定时器函数
+	function countTime(obj) {
+		if(obj["hour"] <= 0 && obj["min"] <= 0 && obj["sex"] <= 0) return false;
+		setData(obj);
+		initFlag = false;
+		var timer = setInterval(function() {
+			runningFlag = true;
+			obj["sec"]--;
+			if(obj["sec"] <= 0) {
+				obj["sec"] = 0;
+				if(obj["min"] == 0) {
+					obj["min"] = 0; 
+					if(obj["hour"] == 0) {
+						obj["hour"] = 0;
+						clearInterval(timer);
+						endFlag = true;
+						runningFlag = false;
+					}else {
+						obj["hour"]--;
+						obj["min"] = 59;
+					}
+				}else {
+					obj["min"]--;
+					obj["sec"] = 59
+				}
+			}
+			setData(obj);
+		}, 1000);
+	}
+
+	//时间数据注入
+	function setData(obj) {
+		var elem = {
+			"hour": hour,
+			"min": min,
+			"sec": sec
+		};
+
+		for(var x in obj) {
+			if(initFlag) {
+				elem[x].innerHTML = formatNum(obj[x]);
+				oldTime[x] = obj[x];
+			}else {
+				if(obj[x] != oldTime[x]) {
+					elem[x].innerHTML = formatNum(obj[x]);
+					oldTime[x] = obj[x];
+				}
+			}
+		}
+	}
+
+	//十位补0
+	function formatNum(num) {
+		return num < 10 ? "0" + num : num;
+	}
+
+	
+
+	//随机启动定时器
+	var startTime = 1000;//默认1s后启动定时器
+	setInterval(function() {
+		if(runningFlag) return false;
+		if(!endFlag) {
+			countTime({
+				"hour": 0,
+				"min": 0,
+				"sec": 10
+			});
+		}else {
+				var hour = randNum(0,5);
+				var min = randNum(0,5);
+				var sec = randNum(0,5);
+				
+				countTime({
+					"hour": hour,
+					"min": min,
+					"sec": sec
+				});
+				startTime = randNum(3000,10000);//3s-10s之间
+			}
+			console.log(startTime);
+		}, startTime);
+
+	//生成max-min之间的随机数
+	function randNum(min, max) {
+		//console.log(parseInt(Math.random()*(max-min) + min));
+		return parseInt(Math.random()*(max-min) + min);
 	}
 
 };
