@@ -611,6 +611,7 @@ main {
 	height: 4rem;
 	font-size: 0;
 	background-color: #fff;
+	z-index: 999;
 }
 
 #menu a {
