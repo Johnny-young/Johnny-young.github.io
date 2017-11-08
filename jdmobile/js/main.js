@@ -33,5 +33,30 @@ window.onload = function() {
 		loop: true
 	});
 
+	//滚动事件
+	var search = document.getElementById("header");
+	var toTop = document.getElementsByClassName("to-top")[0];
+	window.onscroll = function() {
+		var top = document.body.scrollTop;
+		//搜索栏背景颜色改变
+		search.style.background = top > 0 ? "linear-gradient(rgba(208,55,67,0.9),rgba(208,55,67,0.3))" : "linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.1))";
+		//回到顶部按钮出现、隐藏切换
+		toTop.style.display = top > 100 ? "block" : "none";
+	};
+
+	//回到顶部
+	toTop.addEventListener("touchend", function() {
+		document.body.scrollTop = 0;
+	});
+
+	//倒计时
+	var time = document.getElementsByClassName("time")[0],
+			hour = time.getElementsByClassName("hour")[0],
+			min = time.getElementsByClassName("min")[0],
+			sec = time.getElementsByClassName("sec")[0];
+
+	function countTime(num) {
+		
+	}
 
 };
