@@ -1,0 +1,8 @@
+title: Johnny-young.GitHub.io
+description: Johnny-young.github.io
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-merlot
+
+gems:
+  - jekyll-mentions
